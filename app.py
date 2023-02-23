@@ -69,5 +69,8 @@ def deleteS3File():
         print("Object Exists")
         obj = s3.Object("computestorage", "file.txt")
         obj.delete()
-        return Response(status=200)    
+        return Response(status=200)  
+    
+ if __name__ == '__main__':
+    app.run(host='0.0.0.0')
   
