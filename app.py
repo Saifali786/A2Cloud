@@ -16,7 +16,7 @@ s3 = session.resource('s3')
 @app.route("/")
 def start():
     try:
-        result = requests.post('http://52.91.127.198:8080/start', json={"banner": "B00899528", "ip": "100.26.162.234"})
+        result = requests.post('http://52.91.127.198:8080/start', json={"banner": "B00899528", "ip": "100.25.26.205"})
         return "<pre>%s</pre>" % result.text
     except Exception as e:
         print("Exception")
