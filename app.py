@@ -6,9 +6,9 @@ from flask import Flask, request, Response
 app = Flask(__name__)
 
 session = boto3.Session(
-    aws_access_key_id="ASIAQAVUNXM4HALIXVFV",
-    aws_secret_access_key="XBJCTu7WQPeTS217hAKU2SS74YBYZAQof5L2Dpo5",
-    aws_session_token="FwoGZXIvYXdzEHAaDJr89kDxFwhofJq/xSK/AUiHVYoqHcwFKm9nA/qVKIiXUJfuFy4CGPWYbmcejRB5pl4fAUeKqIct1Lv07b0NfYRSz8hfLtIG3qC/mwfENOddAlEyOv2k4E3k1moff5CJxRiJkxkrKGSPagEtHYlvN4vWmk0jqfGUa4Vq4mzcV+5O4eqR7HmcWP+t75wSRe4cxzn/yNs4fBztJtNc79VY350FksYweJ5FKMBaihMgauAN4Ix04AkSDEhfJ2YNh0LG9WyKrkJFtZmiW8LUPuNAKJDN358GMi7WfRko/WJIGBR/bGiSM9ivfVt9ouPbYeTnz9oCz2xegp2ygZgd7jdqKyhJM/Na",
+    aws_access_key_id="ASIAQAVUNXM4HO4LGIPF",
+    aws_secret_access_key="LSsiBvStP6yamuVk3yck9gb7Fh5DoFwoCQ1ZCd1u",
+    aws_session_token="FwoGZXIvYXdzEHMaDDLmXhud65IlLK4wXSK/ASWOJ5eLy5a6Kvk/ca9HgFE1ZhLAIx1Nc8jIbdbtlrIfHcZM+Cm/Vamc1uFfZ7PA7J3TnmT+Nt30XB32aFk+yQBSbNx+KKZ1Q/TN5iEBDtQqJiInvH3kGFEk3cTHCxXtNOaatTOrecit/4gzOKzQaVMfTHEVNamfaKAGDUW73nlS2Buho6YtLwOFlz5ugeMjC6WZAKZHFZL1TPnOVQcgSKFDRrulIWqyqf6SNJS175n2DgeIA1noxEs/TKDaZ17lKN6u4J8GMi6r8i5mPKo7DQJ4b0T/gZ3qIJJ2wk71V3gXiAAJ3S0RSv7EuhW4pIC5yfmRKpFv",
     region_name='us-east-1'
 )
 s3 = session.resource('s3')
@@ -69,8 +69,8 @@ def deleteS3File():
         print("Object Exists")
         obj = s3.Object("computestorage", "file.txt")
         obj.delete()
-        return Response(status=200)
+        return Response(status=200)  
+
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)      
-      
+    app.run(host="0.0.0.0", port=5000)        
 
